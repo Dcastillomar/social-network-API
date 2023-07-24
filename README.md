@@ -35,7 +35,7 @@ DELETE /api/users/:userId (deletes a single user)
 POST /api/users/:userId/friends/:friendId (adds a friend to user friend list)
 
 
-Here is a list for the thoughtRoughts:
+Here is a list for the thoughtRoutes:
 
 GET /api/thought (gets all thoughts)
 
