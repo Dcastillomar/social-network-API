@@ -16,7 +16,7 @@ module.exports = {
             const thought = await Thought.findOne({ _id: req.params.thoughtId })
                 .select('-__v');
 
-            if (!user) {
+            if (!thought) {
                 return res.status(404).json({ message: 'No thoughts with that ID' });
             }
 
@@ -30,7 +30,7 @@ module.exports = {
         try {
             const thought = await Thought.create(req.body)(
                 { _id: req.params.userId },
-                { $push: { thoughts: _id } },
+                { $push: { thought: _id } },
                 { new: true }
             );
             if (!thought) {
@@ -64,7 +64,7 @@ module.exports = {
 
     async deleteThought(req, res) {
         try {
-            const thought = await Thought.findOneAndRemove({ _id: req.params.thoughtId });
+            const thought = await Thought.findOneAndDelete({ _id: req.params.thoughtId });
             if (!thought) {
                 return res.status(404).json({ message: 'Error finding this id' });
             }
@@ -96,7 +96,7 @@ module.exports = {
 
     async deleteReaction(req, res) {
         try {
-            const thought = await Thought.findOneAndDelete(
+            const thought = await Thought.findOneAndUpdate(
                 { _id: req.params.thoughtId },
                 { $pull: { reactions: { reactionId: req.params.reactionId } } },
                 { new: true }

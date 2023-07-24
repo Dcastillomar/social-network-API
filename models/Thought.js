@@ -21,7 +21,9 @@ const thoughtSchema = new Schema({
 );
 
 const reactionSchema = new Schema({
+
     reactionId: Schema.Types.ObjectId,
+    
     reactionBody: {
         type: String, required: true, maxlength: 280
     },
