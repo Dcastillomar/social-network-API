@@ -40,7 +40,7 @@ module.exports = {
             const user = await User.findOneAndUpdate(
                 { _id: req.params.userId },
                 { $set: req.body },
-                { runValidators: true, new: true }
+                // { runValidators: true, new: true }
             );
             if (!User) {
                 return res.status(404).json({ message: 'No user found by this id' });
