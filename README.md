@@ -18,6 +18,8 @@
   Please install express, mongoose, and mongoDB. It is also necessary to have insomnia to run the CRUD operations.
 
   ## Usage
+Video walkthrough: https://drive.google.com/file/d/1YwoOWMxq4iz_WnW5h-_6aezHVrYReLnf/view
+
 To start please install all the node packages with npm install or npm i. Next open the terminal and enter node index.js to start the application. Once the port is open, use insomnia to run the crud operations for the thoughtRoutes and userRoutes. 
 
 Here is a list to use for the userRoutes:
